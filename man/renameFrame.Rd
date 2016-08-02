@@ -6,7 +6,11 @@
 \usage{
 renameFrame(df)
 }
+\arguments{
+\item{df}{a dataframe in which the first column contains wavelength and the second absorbance}
+}
 \description{
 This renames two columns of a data frame to "wavelength" and "absorbance"
 }
+\keyword{internal}
 

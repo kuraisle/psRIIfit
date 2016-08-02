@@ -1,10 +1,11 @@
 #' A formula to fit peaks to a set of data
 #'
-#' Fits a set of peaks with defined centres and widths (HWHM) to a range of spectra. I know the name is silly.
+#' Fits a set of peaks with defined centres and widths (FWHM) to a range of spectra. I know the name is silly.
 #' @param peaks The number of peaks you wish to fit (currently no more than four)
 #' @param fixed a list of defined centres and widths for your peaks. See the documentation for gaussgen for format
 #' @param guesses a list of starting guesses for your data. nls.LM is smart enough that these usually just need to be of the right order of magnitude. In a list, called "i1", "i2" etc.
 #' @param wavelengths a vector of the wavelengths your data is over
+#' @param spectra a list of data frames containing wavelength and absorbance data
 #' @export
 
 fitDemPeaks <- function(peaks, fixed, guesses, spectra, wavelengths){

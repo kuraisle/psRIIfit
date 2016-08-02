@@ -1,6 +1,6 @@
 Package: psRIIfit
 Type: Package
-Title: Written for the analysis of psRII unfolding data.
+Title: Written for the analysis of psRII unfolding data
 Version: 0.1
 Date: 2016-07-21
 Author: James Mitchell
@@ -8,10 +8,9 @@ Maintainer: <jamesjimitchell@gmail.com>
 Description: Uses Levenberg-Marquardt optimisation to fit specified peaks across
     timepoints. These can then be used to obtain pseudo-extinction coefficients and
     kinetic parameters.
-License: Go Nuts
+License: GPL-2 | GPL-3
 LazyData: TRUE
 Imports:
     plyr,
-    minpack.lm,
-    mkin
+    minpack.lm
 RoxygenNote: 5.0.1

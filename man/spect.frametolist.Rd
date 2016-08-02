@@ -6,6 +6,9 @@
 \usage{
 spect.frametolist(df)
 }
+\arguments{
+\item{df}{a data frame. The first column contains the wavelengths and subsequent columns the absorbances for those wavelengths.}
+}
 \description{
 Converts a data frame with the wavelengths and recorded spectra into a list containing data frames of wavelength and recorded spectra, compatible with fitDemPeaks.
 }

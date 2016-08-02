@@ -21,6 +21,6 @@ concPlot <- function(conctable, concentration, times, plotTitle){
   for(i in 1:nrow(conctable)){
     conc[i] <- sum(conctable[i,])
   }
-  lines(times, conc)
-  legend("bottomright", legend = c("Free", "Protonated", "Native"), col = c("black", "red", "green"), lty = c(1,2,3))
+  lines(times, conc, col = "dimgrey")
+  legend("bottomright", legend = c("Free", "Protonated", "Native", "Total"), col = c("black", "red", "green", "dimgrey"), lty = c(1,2,3))
 }

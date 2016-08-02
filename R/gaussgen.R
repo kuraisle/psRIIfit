@@ -42,7 +42,7 @@ gaussgen <- function(peakNumber, fixedParameters, wavelength){
                                 gaussint(intensity = i3, centre = c3, width = w3) +
                                 gaussint(intensity = i4, centre = c4, width = w4))
   } else{
-    "If you want more than 4 peaks you can do it yourself"
+    generatedGauss <- "If you want more than 4 peaks you can do it yourself"
   }
   generatedGauss
 }

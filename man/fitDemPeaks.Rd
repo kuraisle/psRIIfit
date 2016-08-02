@@ -13,9 +13,11 @@ fitDemPeaks(peaks, fixed, guesses, spectra, wavelengths)
 
 \item{guesses}{a list of starting guesses for your data. nls.LM is smart enough that these usually just need to be of the right order of magnitude. In a list, called "i1", "i2" etc.}
 
+\item{spectra}{a list of data frames containing wavelength and absorbance data}
+
 \item{wavelengths}{a vector of the wavelengths your data is over}
 }
 \description{
-Fits a set of peaks with defined centres and widths (HWHM) to a range of spectra. I know the name is silly.
+Fits a set of peaks with defined centres and widths (FWHM) to a range of spectra. I know the name is silly.
 }
 

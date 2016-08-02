@@ -6,7 +6,11 @@
 \usage{
 constantsOut(model)
 }
+\arguments{
+\item{model}{mkin output from which the coefficients export}
+}
 \description{
 This is pointless except as a part of another function
 }
+\keyword{internal}
 

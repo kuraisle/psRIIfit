@@ -21,4 +21,5 @@ A gaussian peak
 \description{
 This function generates a gaussian function
 }
+\keyword{internal}
 

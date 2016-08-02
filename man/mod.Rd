@@ -6,7 +6,15 @@
 \usage{
 mod(modelFormula, timepoint, startPars)
 }
-\description{
-This just makes it easier to pass nls.LM to llply. Please ignore it
+\arguments{
+\item{modelFormula}{a formula the nlsLM fits}
+
+\item{timepoint}{the spectrum of a timepoint}
+
+\item{startPars}{the starting guesses for peak intensities}
 }
+\description{
+This just makes it easier to pass nlsLM to llply. Please ignore it
+}
+\keyword{internal}
 

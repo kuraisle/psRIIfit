@@ -7,6 +7,7 @@
 #' @param width the full width at half maximum
 #' @return A gaussian peak
 #' @export
+#' @keywords internal
 
 
 gaussint <- function(intensity, wavelength, centre, width){
