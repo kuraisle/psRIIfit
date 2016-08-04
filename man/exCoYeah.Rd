@@ -4,16 +4,19 @@
 \alias{exCoYeah}
 \title{Calculate the concentrations of species from intensities}
 \usage{
-exCoYeah(concentration, inttable, times, plotTitle)
+exCoYeah(concentration, inttable, times, plotTitle, species = c("Free",
+  "Protonated", "Native"))
 }
 \arguments{
-\item{concentration}{the known total concentration}
+\item{concentration}{The known total concentration.}
 
-\item{inttable}{a table in which each column is a set of intensities for a peak}
+\item{inttable}{A table in which each column is a set of intensities for a peak.}
 
-\item{times}{the timepoints at which you collected spectra}
+\item{times}{The timepoints at which you collected spectra.}
 
-\item{plotTitle}{the title you want on the plot this delivers}
+\item{plotTitle}{The title you want on the plot this delivers.}
+
+\item{species}{A vector of the names of species in the order they appear in inttable.}
 }
 \description{
 From a given concentration, calculates extinction coefficients and concentrations for three sets of peak intensities. Also plots the concentrations against time. The name of the function is stupid, I just couldn't think of a better one

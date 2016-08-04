@@ -8,6 +8,7 @@
 #' @export
 
 concPlot <- function(conctable, concentration, times, plotTitle){
+  colfunc <- colorRampPalette(c("blue", "darkgreen"))
   matplot(times, conctable,
           type = "l",
           ylab = expression(paste("Concentration (", mu, "M)")),
@@ -15,12 +16,15 @@ concPlot <- function(conctable, concentration, times, plotTitle){
           main = plotTitle,
           bty = "n",
           yaxp = c(0,ceiling(concentration),ceiling(concentration)),
-          ylim = c(min(conctable), ceiling(concentration)))
+          ylim = c(min(conctable), ceiling(concentration)),
+          col = colfunc(ncol(conctable)))
   abline(concentration, 0, lty = 3)
   conc <- c()
   for(i in 1:nrow(conctable)){
     conc[i] <- sum(conctable[i,])
   }
   lines(times, conc, col = "dimgrey")
-  legend("bottomright", legend = c("Free", "Protonated", "Native", "Total"), col = c("black", "red", "green", "dimgrey"), lty = c(1,2,3))
+  legend("bottomright", legend = paste(colnames(conctable), "dimgrey"),
+         col = c(colfunc(ncol(conctable)), "dimgrey"), lty = c(1:ncol(conctable), 1))
 }
+

@@ -4,16 +4,18 @@
 \alias{gaussgen}
 \title{A generator of multiple gaussian peaks}
 \usage{
-gaussgen(peakNumber, fixedParameters, wavelength)
+gaussgen(fixedParameters, wavelengths)
 }
 \arguments{
-\item{peakNumber}{The number of peaks you want to generate}
+\item{fixedParameters}{A data frame containing columns named "centres" and "widths". Each row contains the parameters of one peak.}
 
-\item{fixedParameters}{a list of fixed centres and half widths at half maximum. Centres are named "c1 = " etc., and widths as "w1 = " etc.}
-
-\item{wavelength}{the wavelength of the dataset you want to fit the peaks to}
+\item{wavelength}{The wavelengths of the dataset you want to fit the peaks to.}
+}
+\value{
+A formula for the number of peaks specified by the number of rows in fixedParameters
 }
 \description{
-Generates up to four gaussian peaks (I was too lazy to make it more general)
+Generates any number of gaussian peaks of indeterminate
 }
+\keyword{internal}
 

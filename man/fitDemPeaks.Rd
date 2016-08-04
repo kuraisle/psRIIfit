@@ -4,18 +4,19 @@
 \alias{fitDemPeaks}
 \title{A formula to fit peaks to a set of data}
 \usage{
-fitDemPeaks(peaks, fixed, guesses, spectra, wavelengths)
+fitDemPeaks(fixed, guesses, spectra, wavelengths)
 }
 \arguments{
-\item{peaks}{The number of peaks you wish to fit (currently no more than four)}
+\item{fixed}{A data frame containing columns named "centres" and "widths", specifying the centre and HWHM of each peak respectively.}
 
-\item{fixed}{a list of defined centres and widths for your peaks. See the documentation for gaussgen for format}
+\item{guesses}{A list of starting guesses for your data. nls.LM is smart enough that these usually just need to be of the right order of magnitude. In a list, called "i1", "i2" etc.}
 
-\item{guesses}{a list of starting guesses for your data. nls.LM is smart enough that these usually just need to be of the right order of magnitude. In a list, called "i1", "i2" etc.}
+\item{spectra}{A list of data frames containing wavelength and absorbance data.}
 
-\item{spectra}{a list of data frames containing wavelength and absorbance data}
-
-\item{wavelengths}{a vector of the wavelengths your data is over}
+\item{wavelengths}{A vector of the wavelengths your data is over.}
+}
+\value{
+A matrix of intensities for each peak in fixed.
 }
 \description{
 Fits a set of peaks with defined centres and widths (FWHM) to a range of spectra. I know the name is silly.

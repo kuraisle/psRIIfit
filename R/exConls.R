@@ -1,14 +1,31 @@
-#' Fit extinction coefficients to your intensity data
+#'Fit extinction coefficients to your intensity data
 #'
 #' Uses nls to fit pseudo-extinction coefficients to three intensities, given total concentration. If you want to do any number but three, you'll need a new function.
-#' @param concentration the total concentration of your species
-#' @param inttable a dataframe containing three columns, each containing the intensity of your peaks across a dataset
+#' @param concentration The total concentration of your species.
+#' @param inttable A dataframe with columns containing the intensities of each peak across your dataset.
+#' @param magnitude An rough guess for the extinction coefficients. This assumes all are of a similar order of magnitude.
+#' @return Extinction coefficients for each column. Named exCo_ for the number of the column. see \code{\link[stats]{nls}}
 #' @export
 
-exConls <- function(concentration, inttable){
-  intlist <- list(concentration = rep(concentration, times = nrow(inttable)), i1 = inttable[,1], i2 = inttable[,2], i3 = inttable[,3])
-  fitting <- nls(formula = concentration ~ i1/exCo1 + i2/exCo2 + i3/exCo3,
+exConls <- function(concentration, inttable, magnitude = 0.05){
+  intlist <- list(concentration = rep(concentration, times = nrow(inttable)))
+  for(i in 1:ncol(inttable)){
+    assign(x = paste("intlist$i", i), value = inttable[,i])
+    intlist
+  }
+  vars <- c()
+  for(i in 1:ncol(inttable)){
+    vars[i] <- paste("i", i, "/exCo", i , sep = "")
+    vars
+  }
+  fla <- paste("concentration ~", paste(vars, collapse = "+"))
+  theMod <- as.formula(fla)
+  guesses <- list()
+  for(i in 1:ncol(inttable)){
+    assign(x = paste("guesses$exCo",i, sep = ""), value = magnitude)
+  }
+  fitting <- nls(formula = theMod,
                  data = intlist,
-                 start = list(exCo1 = 0.07, exCo2 = 0.03, exCo3 = 0.03))
+                 start = guesses)
   fitting
 }

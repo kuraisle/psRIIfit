@@ -4,12 +4,17 @@
 \alias{exConls}
 \title{Fit extinction coefficients to your intensity data}
 \usage{
-exConls(concentration, inttable)
+exConls(concentration, inttable, magnitude = 0.05)
 }
 \arguments{
-\item{concentration}{the total concentration of your species}
+\item{concentration}{The total concentration of your species.}
 
-\item{inttable}{a dataframe containing three columns, each containing the intensity of your peaks across a dataset}
+\item{inttable}{A dataframe with columns containing the intensities of each peak across your dataset.}
+
+\item{magnitude}{An rough guess for the extinction coefficients. This assumes all are of a similar order of magnitude.}
+}
+\value{
+Extinction coefficients for each column. Named exCo_ for the number of the column. see \code{\link[stats]{nls}}
 }
 \description{
 Uses nls to fit pseudo-extinction coefficients to three intensities, given total concentration. If you want to do any number but three, you'll need a new function.
