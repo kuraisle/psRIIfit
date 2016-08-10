@@ -4,10 +4,10 @@
 \alias{exConls}
 \title{Fit extinction coefficients to your intensity data}
 \usage{
-exConls(concentration, inttable, magnitude = 0.05)
+exConls(conc, inttable, magnitude)
 }
 \arguments{
-\item{concentration}{The total concentration of your species.}
+\item{conc}{The total concentration of your species.}
 
 \item{inttable}{A dataframe with columns containing the intensities of each peak across your dataset.}
 

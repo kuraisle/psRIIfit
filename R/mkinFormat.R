@@ -7,14 +7,14 @@
 
 mkinFormat <- function(conctable, times){
   someNames <- names(conctable)
-  nameVec <-c(rep(someNames[i], times = nrow(conctable))
+  nameVec <-c(rep(someNames[i], times = nrow(conctable)))
   for(i in 2:length(someNames)){
     nameVec <- c(nameVec, rep(someNames[i], times = nrow(conctable)))
     }
   timeVec <- c(rep(x = times, times = ncol(conctable)))
   valueVec <- c(conctable[,1])
   for(i in 2:ncol(conctable)){
-    valueVec <- c(valueVec, conctable[,i]
+    valueVec <- c(valueVec, conctable[,i])
   }
   df <- data.frame(name = nameVec, time = timeVec, value = valueVec)
   df

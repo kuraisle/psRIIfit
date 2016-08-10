@@ -5,7 +5,7 @@
 \title{Calculate the concentrations of species from intensities}
 \usage{
 exCoYeah(concentration, inttable, times, plotTitle, species = c("Free",
-  "Protonated", "Native"))
+  "Protonated", "Native"), magnitude = 0.05)
 }
 \arguments{
 \item{concentration}{The known total concentration.}
@@ -17,6 +17,8 @@ exCoYeah(concentration, inttable, times, plotTitle, species = c("Free",
 \item{plotTitle}{The title you want on the plot this delivers.}
 
 \item{species}{A vector of the names of species in the order they appear in inttable.}
+
+\item{magnitude}{An rough guess for the extinction coefficients. This assumes all are of a similar order of magnitude.}
 }
 \description{
 From a given concentration, calculates extinction coefficients and concentrations for three sets of peak intensities. Also plots the concentrations against time. The name of the function is stupid, I just couldn't think of a better one

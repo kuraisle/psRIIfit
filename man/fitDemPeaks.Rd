@@ -4,7 +4,7 @@
 \alias{fitDemPeaks}
 \title{A formula to fit peaks to a set of data}
 \usage{
-fitDemPeaks(fixed, guesses, spectra, wavelengths)
+fitDemPeaks(fixed, guesses, spectra, wavelengths, belowZero = FALSE)
 }
 \arguments{
 \item{fixed}{A data frame containing columns named "centres" and "widths", specifying the centre and HWHM of each peak respectively.}
@@ -14,6 +14,8 @@ fitDemPeaks(fixed, guesses, spectra, wavelengths)
 \item{spectra}{A list of data frames containing wavelength and absorbance data.}
 
 \item{wavelengths}{A vector of the wavelengths your data is over.}
+
+\item{belowZero}{An optional logical value. Defaults to false, meaning intensities bottom out at zero.}
 }
 \value{
 A matrix of intensities for each peak in fixed.

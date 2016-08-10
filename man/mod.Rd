@@ -4,7 +4,7 @@
 \alias{mod}
 \title{A function to fit a timepoint to a model formula}
 \usage{
-mod(modelFormula, timepoint, startPars)
+mod(modelFormula, timepoint, startPars, bZ)
 }
 \arguments{
 \item{modelFormula}{a formula the nlsLM fits}
@@ -12,6 +12,8 @@ mod(modelFormula, timepoint, startPars)
 \item{timepoint}{the spectrum of a timepoint}
 
 \item{startPars}{the starting guesses for peak intensities}
+
+\item{bZ}{An external control allowing a lower limit to intensity. Allows fitDemPeaks to have a control for whether or not to go below zero.}
 }
 \description{
 This just makes it easier to pass nlsLM to llply. Please ignore it

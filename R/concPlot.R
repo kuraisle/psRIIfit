@@ -24,7 +24,7 @@ concPlot <- function(conctable, concentration, times, plotTitle){
     conc[i] <- sum(conctable[i,])
   }
   lines(times, conc, col = "dimgrey")
-  legend("bottomright", legend = paste(colnames(conctable), "dimgrey"),
+  legend("topright", legend = c(paste(colnames(conctable)), "Total"),
          col = c(colfunc(ncol(conctable)), "dimgrey"), lty = c(1:ncol(conctable), 1))
 }
 
